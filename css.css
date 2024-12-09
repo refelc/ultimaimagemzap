@@ -1,0 +1,68 @@
+/* Remove margens e configurações padrão */
+body {
+    margin: 0;
+    background-color: black; /* Fundo preto */
+    color: white; /* Texto branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Para garantir que nada saia da tela */
+}
+
+/* Estilo das telas */
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+
+/* Esconde as telas não ativas */
+.hidden {
+    display: none;
+}
+
+/* Estilo do botão */
+button {
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+/* Estilo da imagem na tela do susto */
+#scare-screen img {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
+    transition: transform 1s ease; /* Transição suave */
+    transform: scale(0); /* Inicialmente escondida */
+}
+
+/* Quando a tela do susto aparece, a imagem será escalada para o centro */
+#scare-screen:not(.hidden) img {
+    transform: scale(1); /* Aumenta a imagem para o tamanho normal */
+}
+
+/* Estilo da tela inicial com fundo preto e texto branco */
+#start-screen {
+    background-color: black;
+    color: white;
+}
+
+#start-screen h1, #start-screen button {
+    color: white;
+}

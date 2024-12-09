@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <div id="start-screen" class="screen">
+        <h1>veja a imagem</h1>
+        <button id="start-button">ver</button>
+    </div>
+
+    <!-- Tela do Susto (inicialmente escondida) -->
+    <div id="scare-screen" class="screen hidden">
+        <img src="imagens/bernardojumpscare.png" alt="Surpresa">
+        <audio id="scary-audio">
+            <source src="audio/certo.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <script>
+        // Função para trocar de tela e tocar o áudio
+        const startButton = document.getElementById('start-button');
+        const startScreen = document.getElementById('start-screen');
+        const scareScreen = document.getElementById('scare-screen');
+        const scaryAudio = document.getElementById('scary-audio');
+
+        startButton.addEventListener('click', () => {
+            // Esconde a tela inicial e a mensagem
+            startScreen.classList.add('hidden');
+            
+            // Mostra a tela do susto, centraliza a imagem e toca o áudio
+            scareScreen.classList.remove('hidden');
+            scaryAudio.play();
+        });
+    </script>
+</body>
+</html>
